@@ -1,0 +1,83 @@
+.card {
+  position: relative;
+overflow: hidden;
+  & figure {
+      height: calc(100vh - 200px);
+    min-height: 300px;
+    padding: 0;
+    font-size: 0;
+
+    & img {
+     height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.card-text-container {
+  pointer-events: none;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 30px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card-number::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 2px;
+  height: 1px;
+  width: 70px;
+  background-color: #fff;
+}
+
+.card-description{
+    transition: 0.3s;
+}
+.card-hover:hover~.card-text-container .card-description {
+ margin-bottom: 80px;
+
+}
+
+
+.card-hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.6);
+    & .button {
+    position: absolute;
+    bottom: -30px;
+    left: 25px;
+        transition: 0.5s;
+  }
+   &:hover{
+    opacity: 1;
+     & .button{
+       bottom: 25px;
+       transition: 0.5s;
+     }
+  }
+
+}
+
+@media (min-width: $breakpoint-small){
+  .card{
+    figure{
+      height: 450px;
+    }
+  }
+}

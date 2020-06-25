@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     terser  = require('gulp-terser'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    rigger = require('gulp-rigger'),
+    // rigger = require('gulp-rigger'),
+    fileinclude = require('gulp-file-include'),
     cssmin = require('gulp-clean-css'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
@@ -24,7 +25,9 @@ var gulp = require('gulp'),
         },
         src: { //Пути откуда брать исходники
           html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-          js: 'src/js/main.js',//В стилях и скриптах нам понадобятся только main файлы
+          js: ['node_modules/swiper/js/swiper.min.js',
+          'src/js/*.js'
+          ],//В стилях и скриптах нам понадобятся только main файлы
           style: 'src/scss/main.scss',
           img: 'src/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
           fonts: 'src/fonts/**/*.*'
@@ -51,28 +54,30 @@ var gulp = require('gulp'),
 
 gulp.task('html:build', async function () {
   gulp.src(path.src.html) //Выберем файлы по нужному пути
-      .pipe(rigger()) //Прогоним через rigger
+      // .pipe(rigger()) //Прогоним через rigger
+      .pipe(fileinclude()) //Прогоним через fileinclude
       .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
       .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
 });
 
 gulp.task('js:build', async function () {
   gulp.src(path.src.js) //Найдем наш main файл
-      .pipe(rigger()) //Прогоним через rigger
-      .pipe(sourcemaps.init()) //Инициализируем sourcemap
+      // .pipe(rigger()) //Прогоним через rigger
+      .pipe(fileinclude()) //Прогоним через fileinclude
+      // .pipe(sourcemaps.init()) //Инициализируем sourcemap
       .pipe(terser()) //Сожмем наш js
-      .pipe(sourcemaps.write()) //Пропишем карты
+      // .pipe(sourcemaps.write()) //Пропишем карты
       .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
       .pipe(reload({stream: true})); //И перезагрузим сервер
 });
 
 gulp.task('style:build', async function () {
     gulp.src(path.src.style) //Выберем наш main.scss
-        .pipe(sourcemaps.init()) //То же самое что и с js
+        // .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass().on('error', sass.logError)) //Скомпилируем
         .pipe(prefixer('last 2 versions')) //Добавим вендорные префиксы
-        // .pipe(cssmin()) //Сожмем
-        .pipe(sourcemaps.write())
+        .pipe(cssmin()) //Сожмем
+        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(reload({stream: true}));
 });
@@ -127,7 +132,7 @@ gulp.task('image:build', async function() {
           }),
           //jpg very light lossy, use vs jpegtran
           imageminMozjpeg({
-              quality: 90
+              quality: 40
           })
       ])))
       .pipe(gulp.dest(path.build.img)); //И бросим в build

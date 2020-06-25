@@ -1,0 +1,128 @@
+.swiper-pagination {
+  position: relative;
+}
+
+#catalog-pagination span {
+  width: 20%;
+  height: 3px;
+  background-color: #9a9a9a;
+  border-radius: 0;
+  font-size: 0;
+  margin: 0 2%;
+}
+
+.swiper2-control{
+  display: none;
+}
+#catalog-pagination {
+  height: 30px;
+  padding: 10px 0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.swiper-second-container {
+
+  figure {
+    font-size: 0;
+  }
+
+  & .swiper-button-next {
+    display: none;
+  }
+
+  & .swiper-button-prev {
+    display: none;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-thumbs {
+  overflow: hidden;
+  padding: 10px 1px;
+
+  .swiper-slide-thumb-active {
+    outline: 5px solid rgba(255, 255, 255, 0.6);
+    transform: scale(0.95);
+  }
+}
+
+.h-equally-w {
+  height: calc((100vw - 30px) / 4);
+}
+
+.gallery-top {
+  margin: 0 (-$small-container-padding);
+  overflow: hidden;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .gallery-top {
+    margin: 0;
+  }
+
+  .h-equally-w {
+    height: calc((50vw - 100px) / 4);
+  }
+
+  .outline {
+
+  position:relative;
+   &::after {
+    content: " ";
+    top: 30px;
+    left: 46px;
+    right: -14px;
+    bottom: 30px;
+    position: absolute;
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+     z-index: 2;
+     pointer-events: none;
+  }
+  }
+  
+  .swiper2-control{
+    text-align: center;
+    position: absolute;
+    top:calc(50% - 20px);
+    z-index: 5;
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.46);
+    border: solid rgba(3, 0, 0, 0.51) 1px;
+    border-radius: 50%;
+    &:active , &:focus{
+      outline: none;
+      border: solid #ffffff 1px;
+    }
+    &.swiper2-button-prev{
+      left:-5px;
+      &::before{
+        content: "<";
+      }
+    } 
+    &.swiper2-button-next{
+      right:-5px;
+            &::before{
+        content: ">";
+      }
+    }
+  }
+  
+
+}
+@media (min-width: $breakpoint-xlarge) {
+    .section-catalog .swiper-pagination{
+    display: none;
+  }
+}

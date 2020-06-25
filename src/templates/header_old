@@ -1,0 +1,21 @@
+<header>
+
+  
+<div class="navbar">
+  <div class="navbar-top">
+    <div class="navbar-toggle"><p>меню</p></div>
+    <div class="logo">
+       <a href="index.html">
+            <img src="images/logo.svg" alt="">Весна всегда </a>
+    </div>
+  </div>
+
+  <ul class="navbar-nav">
+    <li ><a href="index.html">свадебная<br>флористика</a></li>
+    <li ><a href="event-bouquets.html">букеты на любые<br>мероприятия</a></li>
+    <li><a href="Bouquets-of-the-bride.html">букеты невесты</a></li>
+    <li ><a href="composition.html">композиции</a></li>
+    <li ><a href="event-design.html">оформление<br>мероприятий</a></li>
+  </ul>
+</div>
+</header>

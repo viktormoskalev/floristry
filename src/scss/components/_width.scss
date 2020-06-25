@@ -343,5 +343,10 @@ $width-xxlarge-width:                            750px !default;
     flex: 1;
     min-width: 1px;
   }
-
+  .width-60\@xl{
+    width: 60%;
+  } 
+  .width-40\@xl{
+    width: 40%;
+  }
 }

@@ -1,5 +1,77 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+  margin:0 -15px;
 }
 
+.grid-item{
+  width: 100%;
+  position: relative;
+  padding:0 15px;
+}
+
+.item-hide{
+  display: none
+}
+.appear-xl{
+  display: none;
+}
+
+@media (min-width: $breakpoint-small) {
+  
+  .order-small{
+    order:-1;
+  }
+  .item-hide{
+  display: block;
+}
+.grid-action{
+  padding: 0 30px;
+  max-width: 600px;
+  margin:0 auto;
+  .grid-item:nth-child(1){
+      .section-title{
+        padding-right: 0;
+        .separator-short{
+          margin: auto;
+        }
+      }
+
+    display: flex;
+flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      text-align: center;
+  }
+}
+  }
+
+@media (min-width: $breakpoint-large) {
+.grid-action{
+  padding: 0 40px;
+  max-width: 800px;
+    
+}
+  }
+
+@media (min-width: $breakpoint-xlarge) {
+  
+  .appear-xl{
+    display: block;
+    text-align: end;
+  }
+    .order-small{
+    order:0;
+  }
+.grid-action{
+  padding: 0 40px;
+  max-width: 1500px;
+  .grid-item{
+    padding:0 50px;
+    display: flex;
+flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+  }

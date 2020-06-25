@@ -1,30 +1,29 @@
 $button-font-size:                               $global-font-size;
 $button-small-font-size:                         $global-small-font-size;
-$button-large-font-size:                         $global-medium-font-size;
+$button-large-font-size:                        10px;
 
 $button-padding:                                 8px 16px;
 $button-small-padding:                           4px 8px;
-$button-large-padding:                           12px 20px;
+$button-large-padding:                           19px 30px;
 
-$button-primary-background:                      green;
-$button-primary-color:                           $global-inverse-color;
-$button-primary-hover-background:                darken($button-primary-background, 5%);
+$button-primary-background:                      rgba(0, 0, 0, 0.2);
+$button-primary-color:                           $global-color;
+$button-primary-hover-background: rgba(255, 255, 255, 0.3);
 $button-primary-hover-color:                     $global-inverse-color;
 $button-primary-active-background:               darken($button-primary-background, 10%);
 $button-primary-active-color:                    $global-inverse-color ;
 
-$button-secondary-background:                    blue;
-$button-secondary-color:                         $global-inverse-color;
-$button-secondary-hover-background:              darken($button-secondary-background, 5%);
-$button-secondary-hover-color:                   $global-inverse-color;
-$button-secondary-active-background:             darken($button-secondary-background, 10%);
-$button-secondary-active-color:                  $global-inverse-color;
+$button-secondary-background:                    $global-inverse-color;
+$button-secondary-color:                         $global-primary-color;
 
 
 .button {
+  display: inline-block;
+  color:#ffffff;
+  background-color: rgba(0, 0, 0, 0.33);
   margin: 0;
-  border: none;
-  text-transform: none;
+  border: solid 1px white;
+  text-transform: uppercase;
   display: inline-block;
   padding: $button-padding;
   font-size: $button-font-size;
@@ -33,6 +32,14 @@ $button-secondary-active-color:                  $global-inverse-color;
   cursor: pointer;
   &:hover {
     text-decoration: none;
+   transform: scale(1.01) translateY(-1px);
+    box-shadow: 8px 6px 6px -2px rgba(0,0,0,0.75);
+  }  
+  &:active {
+    transition: 0;
+    text-decoration: none;
+   transform: scale(0.98) translateY(1px);
+     box-shadow: 0 0 0 0;
   }
   
   &:focus {
@@ -40,48 +47,22 @@ $button-secondary-active-color:                  $global-inverse-color;
   }
 }
 
-.button-primary {
-  background-color: $button-primary-background;
-  color: $button-primary-color;
-  &:hover,
-  &:focus {
-    background-color: $button-primary-hover-background;
-    color: $button-primary-hover-color;
-  }
-  
-  /* OnClick + Active */
-  &:active,
-  &.active {
-    background-color: $button-primary-active-background;
-    color: $button-primary-active-color;
-  }
-
-}
 
 .button-secondary {
-  background-color: $button-secondary-background;
-  color: $button-secondary-color;
-  &:hover,
-  &:focus {
-    background-color: $button-secondary-hover-background;
-    color: $button-secondary-hover-color;
+  margin-bottom: 20px;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .button-primary{
+    padding: 18px 40px;
   }
-  
-  /* OnClick + Active */
-  &:active,
-  &.active {
-    background-color: $button-secondary-active-background;
-    color: $button-secondary-active-color;
+    .button-secondary{
+    padding: 15px 30px;
   }
 }
 
-.button-small {
-  padding: $button-small-padding;
-  font-size: $button-small-font-size;
+@media (min-width: $breakpoint-xlarge) {
+  .button-primary{
+    padding: 18px 30px;
+  }  
 }
-
-.button-large {
-  padding: $button-large-padding;
-  font-size: $button-large-font-size;
-}
-

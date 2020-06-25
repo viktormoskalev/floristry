@@ -1,40 +1,289 @@
-$section-padding-vertical-m:              100px;
-$section-padding-vertical:                $section-padding-vertical-m / 2;
+$section-padding-vertical-m: 120px;
+$section-padding-vertical: $section-padding-vertical-m / 2;
 
+.section-description {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+body .full-screen {
+  height: calc(100vh - 125px);
+  height: var(--vh);
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  & figure {
+    flex: 1 1 auto;
+  }
+}
 
 .section {
   position: relative;
   padding: $section-padding-vertical 0;
+
+  & img {
+    object-fit: cover;
+    height: 100%;
+  }
+
   &-background {
     position: absolute;
-    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: -1;
-    img {
-//      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    top: 0;
+    z-index: -2;
   }
+
   &-overlay {
+    transition: 0.5s;
     position: absolute;
+    background: rgba(21, 21, 21, 0.6);
+    width: 100%;
     top: 0;
+    bottom: 0;
     right: 0;
     left: 0;
-    bottom: 0;
-    background: rgba(21, 21, 21, 0.6);
+    z-index: -1;
   }
+
   &-foreground {
-    position: relative;
-  }
-  @media (min-width: $breakpoint-medium) {
-    padding: $section-padding-vertical-m 0;
+    transition: 0.5s;
+    flex: 1 1 auto;
+    flex-direction: column;
+    display: flex;
   }
 }
 
-.section-hero {
-height: 100vh;
-  padding: 0;
+
+.hero-top,
+.hero-middle,
+.hero-bottom {
+  min-height: 130px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.hero-middle {
+  text-align: center;
+}
+
+.text-arrow {
+  display: none;
+}
+
+.arrow {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & div {
+    background-color: #dedede;
+    width: 3px;
+    height: 25px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 3px;
+      background-color: #dedede;
+      transform: rotate(-45deg);
+      position: absolute;
+      bottom: 8px;
+      left: calc(50% - 3px);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 3px;
+      background-color: #dedede;
+      transform: rotate(45deg);
+      position: absolute;
+      bottom: 8px;
+      left: calc(50% - 12px);
+    }
+  }
+}
+
+.hero-socials {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 25px;
+
+  & li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    background-color: $global-background;
+    border-radius: 50%;
+    padding: 1px;
+    animation: shake-it 2s infinite ease-in-out;
+  }
+}
+
+.section-title {
+  margin-top: 30px;
+}
+
+.section-catalog {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-foreground {
+  width: 100%;
+}
+
+.section-action {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: $breakpoint-small) {
+   body .full-screen {
+    height: 100vh;
+  }
+  
+}
+  @media (min-width: $breakpoint-medium) {
+  .second-page {
+    padding: 0;
+  }
+
+  .catalog-title {
+    margin-bottom: 90px;
+    text-align: center;
+    padding-right: 0;
+
+    &::before {
+      margin-top: 45px;
+      left: calc(50% - 40px);
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 85px;
+      background-color: rgba(255, 255, 255, 0.65);
+    }
+
+    &::after {
+      color: rgba(253, 253, 253, 0.05);
+      font-size: 7vw;
+      content: "Каталог Услуг";
+      position: absolute;
+      left: 0;
+      margin-top: 45px;
+      width: 100%;
+      text-align: center;
+      letter-spacing: 3vw;
+      padding-left: 3vw;
+
+    }
+
+  }
+
+  .right-second-page {
+    padding-top: 60px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+
+
+}
+
+@media (min-width: $breakpoint-large) {
+  .text-arrow {
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    &::after {
+      content: "Смотреть каталог";
+      display: block;
+      position: absolute;
+      transform: rotate(90deg);
+      font-size: 16px;
+      width: 160px;
+     left: -31px;
+    }
+    &::before{
+      display: block;
+      content:" ";
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 0;
+      bottom: -25px;
+    }
+  }
+
+  .arrow {
+    margin-top: 55px;
+    width: 60px;
+    height: 60px;
+    background-image: url(../images/scroll.svg);
+    background-repeat: no-repeat;
+    div{
+      display: none;
+    }
+  }
+
+  .hero-bottom {
+    padding: 0 94px;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .hero-socials {
+      padding: 0;
+      width: 60px;
+      flex-direction: column;
+
+      li {
+        background: none;
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-xlarge){
+  .section-hero:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+pointer-events: none;
+    background: linear-gradient(0deg, #3B181E 3.33%, rgba(59, 24, 30, 0) 100%);
+  }
+  
+  .section-action{
+    figure{
+      height: 410px;
+    }
+  }
+}
+
+

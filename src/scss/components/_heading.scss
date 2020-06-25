@@ -1,8 +1,8 @@
 $heading-font-family:                       $global-font-family;
-$heading-font-weight:                       700;
-$heading-color:                             $global-emphasis-color;
-$heading-text-transform:                    none;
-$heading-margin-vertical:                   30px;
+$heading-font-weight:                       400;
+$heading-color:                             $global-color;
+$heading-text-transform:                    uppercase;
+$heading-margin-vertical:                   20px;
 
 $h1-font-size-m:                            $global-xxlarge-font-size;
 $h1-font-size:                              $h1-font-size-m - 10px;
@@ -21,13 +21,11 @@ $h5-font-size:                              $global-font-size;
 $h5-line-height:                            1.4;
 $h6-font-size:                              $global-small-font-size;
 $h6-line-height:                            1.4;
-
+.section-title{
+  padding-right: 100px;
+}
  h1, .heading-h1,
- h2, .heading-h2,
- h3, .heading-h3,
- h4, .heading-h4,
- h5, .heading-h5,
- h6, .heading-h6 {
+ h2, .heading-h2{
      margin: 0 0 $heading-margin-vertical 0;
      font-family: $heading-font-family;
      font-weight: $heading-font-weight;
@@ -45,30 +43,21 @@ $h6-line-height:                            1.4;
      line-height: $h2-line-height;
  }
  
- h3, .heading-h3 {
-     font-size: $h3-font-size;
-     line-height: $h3-line-height;
- }
  
- h4, .heading-h4 {
-     font-size: $h4-font-size;
-     line-height: $h4-line-height;
- }
- 
- h5, .heading-h5 {
-     font-size: $h5-font-size;
-     line-height: $h5-line-height;
- }
- 
- h6, .heading-h6 {
-     font-size: $h6-font-size;
-     line-height: $h6-line-height;
- }
  
  @media (min-width: $breakpoint-medium) {
  
      h1, .heading-h1 { font-size: $h1-font-size-m; }
      h2, .heading-h2 { font-size: $h2-font-size-m; }
+ 
+ } 
+@media (min-width: $breakpoint-xlarge) {
+ 
+  .second-page{
+    h2{
+      font-size: 50px;
+    }
+  }
  
  }
  

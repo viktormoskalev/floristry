@@ -1,60 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-  <head>
-    <meta charset="utf-8">
-    <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
 
-  <body>
-    <div class="wrapper">
- <section class="section section-hero">
-  <figure class="section-background">
-    <img src="images/hero.jpg" alt="image"/>
-  </figure>
-  <div class="section-overlay"></div>
-  <div class="section-foreground">
-         <header>
-         
-           
-         <div class="navbar">
-           <div class="navbar-top">
-             <div class="navbar-toggle"> </div>
-             <div class="logo">
-                <a href="index.html">
-              
-                <img src="images/logo.svg" alt="">
-                 Весна всегда
-                 </a>
-             </div>
-           </div>
-         
-           <ul class="navbar-nav">
-             <li><a href="#">свадебная
-         флористика</a></li>
-             <li><a href="#">букеты на любые
-         мероприятия</a></li>
-             <li><a href="#">букеты невесты</a></li>
-             <li><a href="#">композиции</a></li>
-             <li><a href="#">оформление
-         мероприятий</a></li>
-           </ul>
-         </div>
-         </header>
-  </div>
-</section>
-      <main class="main">
-     
-      </main>
-      
-      <footer>
-        Footer
-      </footer>
+<body>
+    <div class="preloader">
+  <div class="item-1"></div>
+  <div class="item-2"></div>
+  <div class="item-3"></div>
+  <div class="item-4"></div>
+  <div class="item-5"></div>
+</div>
+  <div class="wrapper">
+
+    <header>
+<div class="navbar">
+  <div class="navbar-top">
+    <div class="navbar-toggle"><p>меню</p></div>
+    <div class="logo is_active">
+       <a href="index.html">
+            <img src="images/logo.svg" alt="img">Весна всегда </a>
     </div>
+  </div>
+
+  <ul class="navbar-nav">
+    <li ><a href="index.html">свадебная<br>флористика</a></li>
+    <li ><a href="event-bouquets.html">букеты на любые<br>мероприятия</a></li>
+    <li><a href="Bouquets-of-the-bride.html">букеты невесты</a></li>
+    <li ><a href="composition.html">композиции</a></li>
+    <li ><a href="event-design.html">оформление<br>мероприятий</a></li>
+  </ul>
+</div>
+</header>
 
 
-    <script src="js/main.js"></script>
-  </body>
+    <main class="main">
+      <section class="full-screen section section-hero">
+        <figure class="section-background">
+          <img src="images/hero.jpg" alt="image" />
+        </figure>
+        <div class="section-overlay"></div>
+        <div class="section-foreground">
+          <div class="hero-top"></div>
+          <div class="hero-middle">
+            <h1 class="hero-title">
+              Флористика <br>с душой
+            </h1>
+            <a href="#catalog" class="button button-primary">Смотреть работы</a>
+          </div>
+          <div class="hero-bottom">
+            <ul class="hero-socials">
+              <li><a href="#" class="icon-insta"></a></li>
+              <li><a href="#" class="icon-face"></a></li>
+              <li><a href="#" class="icon-viber"></a></li>
+              <li><a href="#" class="icon-vk"></a></li>
+            </ul>
+            <a href="#catalog" class="arrow">
+              <div></div>
+            </a>
+            <a href="#catalog" class="text-arrow">
+            </a>
+
+          </div>
+        </div>
+      </section>
+      <section id="catalog" class="section section-catalog">
+        <div class="container">
+          <h2 class="section-title fadeIn wow catalog-title" data-wow-duration="2s">Каталог Услуг</h2>
+          <div class="catalog-foreground">
+            <div class="swiper-container">
+              <div id="nowowmobile" class="fadeInLeft  wow swiper-wrapper" data-wow-duration="2s">
+                <div class="swiper-slide">
+                  <div class="card card-catalog">
+  <figure><img src="images/catalog1.jpg" alt=""></figure>
+
+  <div class="card-hover">
+    <a href="Bouquets-of-the-bride.html" class="button button-primary">Смотреть работы</a>
+  </div>
+  <div class="card-text-container">
+    <span class="card-number"> 01 </span>
+    <span class="card-description">букет невесты и свадебное оформление </span>
+  </div>
+</div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card card-catalog">
+  <figure><img src="images/catalog2.jpg" alt=""></figure>
+
+  <div class="card-hover">
+    <a href="event-bouquets.html" class="button button-primary">Смотреть работы</a>
+  </div>
+  <div class="card-text-container">
+    <span class="card-number"> 02 </span>
+    <span class="card-description">букеты на торжества </span>
+  </div>
+</div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card card-catalog">
+  <figure><img src="images/catalog3.jpg" alt=""></figure>
+
+  <div class="card-hover">
+    <a href="composition.html" class="button button-primary">Смотреть работы</a>
+  </div>
+  <div class="card-text-container">
+    <span class="card-number"> 03 </span>
+    <span class="card-description">композиции </span>
+  </div>
+</div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card card-catalog">
+  <figure><img src="images/catalog4.jpg" alt=""></figure>
+
+  <div class="card-hover">
+    <a href="event-design.html" class="button button-primary">Смотреть работы</a>
+  </div>
+  <div class="card-text-container">
+    <span class="card-number"> 04 </span>
+    <span class="card-description">оформление мероприятий </span>
+  </div>
+</div>
+                </div>
+              </div>
+              <div class="swiper-pagination" id="catalog-pagination"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-action">
+        <div class="container">
+         <div class="grid grid-action">
+           <div class="grid-item width-40@xl fadeInLeft wow" data-wow-duration="2s"><h2 class="section-title " >акционные
+            предложения
+            <div class="separator-short "></div>
+            </h2>
+
+          
+          <p class="section-description">При заказе свадебного оформления предоставляется скидка на букет невесты и бутоньерку в рамере 30%</p>
+
+          <a class="button button-secondary popup-with-form"  href="#call-form">Заказать оформление</a>
+</div>
+           <div class="grid-item item-hide width-60@xl fadeInRight wow order-small" data-wow-duration="3s"><figure><img src="images/action.jpg" alt="flower"></figure></div>
+         </div>
+          
+
+
+          <form id="call-form" class="mfp-hide white-popup-block">
+	<fieldset class="popup-form">
+<p>Оставьте свой
+ номер и мы вам
+ перезвоним!</p>
+		<ul>
+			<li>
+				<input id="name" name="name" type="text" placeholder="Имя" required="">
+			</li>
+
+			<li>
+				<input id="phone" name="phone" type="tel" placeholder="Телефон" required="">
+			</li>
+			<li>
+			  <button class="button">ПОЗВОНИТЕ МНЕ</button>
+			</li>
+		</ul>
+	</fieldset>
+</form>
+        </div>
+
+      </section>
+    </main>
+    <footer >
+ <div class="separator"></div>
+<div class="container bounceInUp wow" data-wow-duration="1s">
+
+  <ul class="footer-nav">
+<li ><a href="index.html">Свадебная флористика</a></li>
+    <li ><a href="event-bouquets.html">Букеты на любые мероприятия</a></li>
+    <li><a href="Bouquets-of-the-bride.html">Букеты невесты</a></li>
+    <li ><a href="composition.html">Композиции</a></li>
+    <li ><a href="event-design.html">Оформление мероприятий</a></li>
+  </ul>
+  
+              <ul class="footer-socials">
+              <li><a href="#" class="icon-insta"></a></li>
+              <li><a href="#" class="icon-face"></a></li>
+              <li><a href="#" class="icon-viber"></a></li>
+              <li><a href="#" class="icon-vk"></a></li>
+            </ul>
+            </div>
+</footer>
+    <!--          //= templates/footer.html-->
+  </div>
+     <script src="js/jquery.min.js"></script>
+   <script src="js/jquery.magnific-popup.min.js"></script>
+   <script src="js/swiper.min.js"></script>
+   <script src="js/wow.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+
 </html>

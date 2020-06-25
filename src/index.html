@@ -1,32 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+@@include('./templates/head.html')
 
-  <head>
-    <meta charset="utf-8">
-    <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
 
-  <body>
-    <div class="wrapper">
- <section class="section section-hero">
-  <figure class="section-background">
-    <img src="images/hero.jpg" alt="image"/>
-  </figure>
-  <div class="section-overlay"></div>
-  <div class="section-foreground">
-         //= templates/header.html
-  </div>
-</section>
-      <main class="main">
-     
-      </main>
-      
-      //= templates/footer.html
+<body>
+  @@include('./templates/preloader.html')
+  <div class="wrapper">
+
+    <header>
+<div class="navbar">
+  <div class="navbar-top">
+    <div class="navbar-toggle"><p>меню</p></div>
+    <div class="logo is_active">
+       <a href="index.html">
+            <img src="images/logo.svg" alt="img">Весна всегда </a>
     </div>
+  </div>
+
+  <ul class="navbar-nav">
+    <li ><a href="index.html">свадебная<br>флористика</a></li>
+    <li ><a href="event-bouquets.html">букеты на любые<br>мероприятия</a></li>
+    <li><a href="Bouquets-of-the-bride.html">букеты невесты</a></li>
+    <li ><a href="composition.html">композиции</a></li>
+    <li ><a href="event-design.html">оформление<br>мероприятий</a></li>
+  </ul>
+</div>
+</header>
 
 
-    <script src="js/main.js"></script>
-  </body>
+    <main class="main">
+      <section class="full-screen section section-hero">
+        <figure class="section-background">
+          <img src="images/hero.jpg" alt="image" />
+        </figure>
+        <div class="section-overlay"></div>
+        <div class="section-foreground">
+          <div class="hero-top"></div>
+          <div class="hero-middle">
+            <h1 class="hero-title">
+              Флористика <br>с душой
+            </h1>
+            <a href="#catalog" class="button button-primary">Смотреть работы</a>
+          </div>
+          <div class="hero-bottom">
+            <ul class="hero-socials">
+              <li><a href="#" class="icon-insta"></a></li>
+              <li><a href="#" class="icon-face"></a></li>
+              <li><a href="#" class="icon-viber"></a></li>
+              <li><a href="#" class="icon-vk"></a></li>
+            </ul>
+            <a href="#catalog" class="arrow">
+              <div></div>
+            </a>
+            <a href="#catalog" class="text-arrow">
+            </a>
+
+          </div>
+        </div>
+      </section>
+      <section id="catalog" class="section section-catalog">
+        <div class="container">
+          <h2 class="section-title fadeIn wow catalog-title" data-wow-duration="2s">Каталог Услуг</h2>
+          <div class="catalog-foreground">
+            <div class="swiper-container">
+              <div id="nowowmobile" class="fadeInLeft  wow swiper-wrapper" data-wow-duration="2s">
+                <div class="swiper-slide">
+                  @@include('./templates/card.html',{
+                  "description":"букет невесты и свадебное оформление" ,
+                  "number":"1" ,
+                  "linck": "Bouquets-of-the-bride.html",
+                  })
+                </div>
+                <div class="swiper-slide">
+                  @@include('./templates/card.html',{
+                  "description":"букеты на торжества" ,
+                  "number":"2" ,
+                  "linck": "event-bouquets.html",
+                  })
+                </div>
+                <div class="swiper-slide">
+                  @@include('./templates/card.html',{
+                  "description":"композиции" ,
+                  "number":"3" ,
+                  "linck": "composition.html",
+                  })
+                </div>
+                <div class="swiper-slide">
+                  @@include('./templates/card.html',{
+                  "description":"оформление мероприятий" ,
+                  "number":"4" ,
+                  "linck": "event-design.html",
+                  })
+                </div>
+              </div>
+              <div class="swiper-pagination" id="catalog-pagination"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-action">
+        <div class="container">
+         <div class="grid grid-action">
+           <div class="grid-item width-40@xl fadeInLeft wow" data-wow-duration="2s"><h2 class="section-title " >акционные
+            предложения
+            <div class="separator-short "></div>
+            </h2>
+
+          
+          <p class="section-description">При заказе свадебного оформления предоставляется скидка на букет невесты и бутоньерку в рамере 30%</p>
+
+          <a class="button button-secondary popup-with-form"  href="#call-form">Заказать оформление</a>
+</div>
+           <div class="grid-item item-hide width-60@xl fadeInRight wow order-small" data-wow-duration="3s"><figure><img src="images/action.jpg" alt="flower"></figure></div>
+         </div>
+          
+
+
+          @@include('./templates/popup.html')
+        </div>
+
+      </section>
+    </main>
+    @@include('./templates/footer.html')
+    <!--          //= templates/footer.html-->
+  </div>
+  @@include('./templates/scripts.html')
+</body>
+
 </html>

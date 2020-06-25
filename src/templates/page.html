@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('./head.html')
+
+<body>
+ @@include('./preloader.html')
+  <div class="wrapper">
+
+    <header>
+<div class="navbar">
+  <div class="navbar-top">
+    <div class="navbar-toggle"><p>меню</p></div>
+    <div class="logo tshadow">
+       <a href="index.html">
+            <img class="tshadow" src="images/logo.svg" alt="img">Весна всегда </a>
+    </div>
+  </div>
+
+  <ul class="navbar-nav">
+    <li ><a href="index.html">свадебная<br>флористика</a></li>
+    <li ><a href="event-bouquets.html">букеты на любые<br>мероприятия</a></li>
+    <li><a href="Bouquets-of-the-bride.html">букеты невесты</a></li> 
+    <li ><a href="composition.html">композиции</a></li>
+    <li ><a href="event-design.html">оформление<br>мероприятий</a></li>
+  </ul>
+</div>
+</header>
+    <main class="main">
+    
+      <section class="section second-page">
+     
+        <div class="grid">
+          <div class="grid-item outline width-1-2@m " >
+            <div class="swiper-second-container gallery-top height-witout-nav">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure><img src="images/@@pagename/1.jpg" alt="img"></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="images/@@pagename/2.jpg" alt="img"></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="images/@@pagename/3.jpg" alt="img"></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="images/@@pagename/4.jpg" alt="img"></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="images/@@pagename/5.jpg" alt="img"></figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure><img src="images/@@pagename/6.jpg" alt="img"></figure>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+            <div class="grid-item width-1-2@m " >
+ <div class="container">
+              <div class="grid right-second-page">
+               <div class="grid-item"></div>
+                <div class="grid-item">
+                  <h2 class="section-title">@@title</h2>
+                  <p class="section-description">@@description</p>
+                  <a href="#call-form" class="button button-primary popup-with-form mb-30">Заказать</a>
+                </div>
+                <div class="grid-item">
+                            <div class="swiper-second-container gallery-thumbs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <figure class="h-equally-w"><img src="images/@@pagename/1.jpg" alt="img"></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure class="h-equally-w"><img src="images/@@pagename/2.jpg" alt="img"></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure class="h-equally-w"><img src="images/@@pagename/3.jpg" alt="img"></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure class="h-equally-w"><img src="images/@@pagename/4.jpg" alt="img"></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure class="h-equally-w"><img src="images/@@pagename/5.jpg" alt="img"></figure>
+              </div>
+              <div class="swiper-slide">
+                <figure class="h-equally-w"><img src="images/@@pagename/6.jpg" alt="img"></figure>
+              </div>
+            </div>
+
+          </div>
+                                     <div class="swiper2-button-next swiper2-control"></div>
+          <div class="swiper2-button-prev swiper2-control"></div>
+                </div>
+                <div class="grid-item appear-xl">
+                 <a href="https://www.instagram.com/" target="_blank">
+                  <p>Больше фотографий в профиле  <i  class="icon-insta corrected">  </i></p> 
+                  </a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+
+      
+        @@include('./popup.html')
+
+      </section>
+
+    </main>
+      </div>
+      <div class="second-page-footer"></div>
+    @@include('./footer.html')
+
+
+
+
+  @@include('./scripts.html')
+</body>
+
+</html>
